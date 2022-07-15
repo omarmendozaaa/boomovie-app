@@ -20,7 +20,7 @@ const appConfig = {
      */
     pagesPath: './pages/',
     prplLevel: 1,
-    initialBundle: ['login'],
+    initialBundle: ['home'],
 
     /* Internationalization options */
     locales: {

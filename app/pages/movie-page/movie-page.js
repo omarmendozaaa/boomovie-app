@@ -11,7 +11,7 @@ import '@boomovie/bbva-movie-detail-bs/bbva-movie-detail-bs'
 import { GetDiscovery, GetMovie } from '../../elements/movieapi-dm.js';
 
 
-class Movie extends BbvaCoreIntlMixin(CellsPage) {
+class MoviePage extends BbvaCoreIntlMixin(CellsPage) {
   static get is() {
     return 'movie-page';
   }
@@ -28,14 +28,14 @@ class Movie extends BbvaCoreIntlMixin(CellsPage) {
 
   _routeEvent(e){
     console.log(e);
-    this.navigate(e.detail);
+    this.navigate(e);
   }
 
   render() {
     return html`
       <cells-template-paper-drawer-panel mode="seamed">
         <div slot="app__header">
-          <bbva-navbar-bs @route-menu-event=${(e) => this._routeEvent(e)}></bbva-navbar-bs>
+          <bbva-navbar-bs @route-menu-event=${(e) => this._routeEvent(e.detail)}></bbva-navbar-bs>
         </div>
 
         <div slot="app__main" class="container">
@@ -57,4 +57,4 @@ class Movie extends BbvaCoreIntlMixin(CellsPage) {
   }
 }
 
-window.customElements.define(Movie.is, Movie);
+window.customElements.define(MoviePage.is, MoviePage);

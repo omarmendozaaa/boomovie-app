@@ -7,7 +7,6 @@ import '@bbva-web-components/bbva-header-main';
 import '@boomovie/bbva-navbar-bs/bbva-navbar-bs';
 import '@boomovie/bbva-list-discovery-card/bbva-list-discovery-card';
 
-import styles from './home-page-styles.js';
 import { GetDiscovery } from '../../elements/movieapi-dm.js';
 
 
@@ -27,19 +26,21 @@ class HomePage extends BbvaCoreIntlMixin(CellsPage) {
   }
 
   _routeEvent(e){
-    console.log(e);
-    this.navigate(e.detail);
+    this.navigate(e);
   }
-
+  _goMovieDetail(movieId){
+    console.log(movieId);
+    this.navigate('movie', {  id: movieId, });
+  }
   render() {
     return html`
       <cells-template-paper-drawer-panel mode="seamed">
         <div slot="app__header">
-          <bbva-navbar-bs @route-menu-event=${(e) => this._routeEvent(e)}></bbva-navbar-bs>
+          <bbva-navbar-bs @route-menu-event=${(e) => this._routeEvent(e.detail)}></bbva-navbar-bs>
         </div>
 
         <div slot="app__main" class="container">
-          <bbva-list-discovery-card .discoveryList=${this.Movies}></bbva-list-discovery-card>
+          <bbva-list-discovery-card .discoveryList=${this.Movies} @get-id-movie-event=${(e)=> this._goMovieDetail(e.detail)}></bbva-list-discovery-card>
         </div>
      </cells-template-paper-drawer-panel>`;
   }
@@ -54,9 +55,6 @@ class HomePage extends BbvaCoreIntlMixin(CellsPage) {
 
   onPageLeave() {
     this.Movies = []
-  }
-  static get styles() {
-    return [ styles ];
   }
 }
 
