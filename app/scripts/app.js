@@ -7,7 +7,9 @@
       'dashboard': '/dashboard',
       'movement-detail': '/movement/:id/:label',
       'help': '/help',
-      'home': '/home'
+      'home': '/home',
+      'movies': '/movies',
+      'movie': '/movie/:id'
     }
   });
 }());

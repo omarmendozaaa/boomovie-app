@@ -5,15 +5,14 @@ import { html, css } from 'lit-element';
 import '@cells-components/cells-template-paper-drawer-panel';
 import '@bbva-web-components/bbva-header-main';
 import '@boomovie/bbva-navbar-bs/bbva-navbar-bs';
-import '@boomovie/bbva-list-discovery-card/bbva-list-discovery-card';
+import '@boomovie/bbva-list-movie-card/bbva-list-movie-card';
 
-import styles from './home-page-styles.js';
 import { GetDiscovery } from '../../elements/movieapi-dm.js';
 
 
-class HomePage extends BbvaCoreIntlMixin(CellsPage) {
+class MoviesPage extends BbvaCoreIntlMixin(CellsPage) {
   static get is() {
-    return 'home-page';
+    return 'movies-page';
   }
 
   static get properties() {
@@ -39,7 +38,7 @@ class HomePage extends BbvaCoreIntlMixin(CellsPage) {
         </div>
 
         <div slot="app__main" class="container">
-          <bbva-list-discovery-card .discoveryList=${this.Movies}></bbva-list-discovery-card>
+          <bbva-list-movie-card .movieList=${this.Movies}></bbva-list-movie-card>
         </div>
      </cells-template-paper-drawer-panel>`;
   }
@@ -55,9 +54,7 @@ class HomePage extends BbvaCoreIntlMixin(CellsPage) {
   onPageLeave() {
     this.Movies = []
   }
-  static get styles() {
-    return [ styles ];
-  }
+
 }
 
-window.customElements.define(HomePage.is, HomePage);
+window.customElements.define(MoviesPage.is, MoviesPage);

@@ -27,6 +27,10 @@
     "@bbva-web-components/bbva-list-info": "~3.4.1",
     "@bbva-web-components/bbva-list-movement": "^5.7.4",
     "@bbva-web-components/bbva-list-simple": "~6.7.3",
+    "@boomovie/bbva-navbar-bs": "git+ssh://git@github.com:omarmendozaaa/bbva-navbar-bs.git#master",
+    "@boomovie/bbva-list-movie-card":"git+ssh://git@github.com:omarmendozaaa/bbva-list-movie-card.git#master",
+    "@boomovie/bbva-list-discovery-card":"git+ssh://git@github.com:omarmendozaaa/bbva-list-discovery-card.git#master",
+    "@boomovie/bbva-movie-detail-bs": "git+ssh://git@github.com:omarmendozaaa/bbva-movie-detail-bs.git#master",
     "@cells-components/cells-skeleton-loading-page": "~2.0.7",
     "@cells-components/cells-template-paper-drawer-panel": "~2.0.14",
     "@cells-components/coronita-icons": "~1.0.67",
@@ -35,6 +39,7 @@
     "@cells/cells-page": "~1.3.1",
     "@open-wc/lit-helpers": "~0.3.0",
     "@webcomponents/webcomponentsjs": "~2.4.4",
+    "bootstrap": "^5.1.3",
     "cells-app-template": "~6.0.0"
   }
 }
